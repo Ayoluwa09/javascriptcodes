@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Banco da Loira </title>
+</head>
+<body>
+    <form>
+        <p> Saldo: <input type="text" id="saldo" readonly placeholder="Saída" redondly value="1800"></p>
+        <p> Saque:<input type="number" id="saque" "></p>
+
+        <button type="button" onclick="sacar()"> Sacar </button>
+
+    </form>
+    <script>
+        function sacar () {
+           // alert ("funcionando")
+           let saldo = parseFloat (document.getElementById ("saldo").value);
+           let saque = parseFloat (document.getElementById ("saque").value);
+        if(saque <= saldo){
+            let saldof = parseFloat(saldo) - parseFloat(saque);
+            document.getElementById ("saldo").value = saldof;
+            alert (" Saque concluido");
+        }else{
+            alert ("Operação não permitida ");
+        }
+        }
+        
+    </script>
+    
+    
+    
+</body>
+</html>
